@@ -1,0 +1,47 @@
+package src.test;
+
+import java.util.ArrayList;
+public class Course {
+	private String courseId;
+	private String cName;
+	private int points;
+	private String description;
+	
+	
+	
+	
+	
+	private ArrayList<Student> sList;
+	
+
+	public ArrayList<Student> getsList() {
+		return sList;
+	}
+	public String getDescription() {
+		return description;
+	}
+	public void setDescription(String description) {
+		this.description = description;
+	}
+	public int getPoints() {
+		return points;
+	}
+	public void setPoints(int points) {
+		this.points = points;
+	}
+	public void setsList(ArrayList<Student> sList) {
+		this.sList = sList;
+	}
+	public String getCourseId() {
+		return courseId;
+	}
+	public void setCourseId(String courseId) {
+		this.courseId = courseId;
+	}
+	public String getcName() {
+		return cName;
+	}
+	public void setcName(String cName) {
+		this.cName = cName;
+	}
+}
