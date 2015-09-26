@@ -1,0 +1,50 @@
+package src.test;
+
+import java.util.ArrayList;
+
+public class Student {
+	private String pnr;
+	private String sName;
+	private String sAddress;
+	private int sTelNr;
+	
+	
+	
+	private ArrayList<Course> cList;
+		
+	
+	
+	
+	
+
+	public ArrayList<Course> getcList() {
+		return cList;
+	}
+	public void setcList(ArrayList<Course> cList) {
+		this.cList = cList;
+	}
+	public String getPnr() {
+		return pnr;
+	}
+	public void setPnr(String pnr) {
+		this.pnr = pnr;
+	}
+	public String getsName() {
+		return sName;
+	}
+	public void setsName(String sName) {
+		this.sName = sName;
+	}
+	public String getsAddress() {
+		return sAddress;
+	}
+	public void setsAddress(String sAddress) {
+		this.sAddress = sAddress;
+	}
+	public int getsTelNr() {
+		return sTelNr;
+	}
+	public void setsTelNr(int sTelNr) {
+		this.sTelNr = sTelNr;
+	}
+}
