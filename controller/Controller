@@ -1,0 +1,144 @@
+package src.test;
+
+
+import java.sql.*;
+
+public class Controller {
+    private Dal cb;
+    //private Validate v;
+    
+    
+    public Controller() throws SQLException {
+        cb = new Dal();
+    }
+    
+    /**
+     * Error
+     * 
+     */
+    
+    public String getCurrentErrorMessage(){
+    	return cb.getCurrentErrorMessage();
+    }
+    
+    
+    /**
+     * Studentfunktioner
+     * 
+     */
+    
+    public int addStudent(String pnr, String sName, String sAddress, int sTelNr) throws SQLException {
+        return cb.addStudent("add", pnr, sName, sAddress, sTelNr);
+    }
+    
+    public int changeStudent(String pnr, String sName, String sAddress, int sTelNr) throws SQLException{
+    	return cb.addStudent("change", pnr, sName, sAddress, sTelNr);
+    }
+    
+    public int removeStudent(String pnr) throws SQLException {
+        return cb.removeStudent(pnr);
+    }
+    
+    
+    public ResultSet getStudent(String pnr) throws SQLException {
+        return cb.getStudent(pnr);
+    }
+    
+    public ResultSet getStudents() throws SQLException {
+        return cb.getStudents();
+    }
+    public ResultSet getFinishedWithCourse(String courseId)throws SQLException{
+    	return cb.getFinishedWithCourse(courseId);
+    }
+    public ResultSet getNotFinishedWithCourse(String courseId)throws SQLException{
+    	return cb.getNotFinishedWithCourse(courseId);
+    }
+    
+    /**
+     * Kursfunktioner
+     * 
+     */
+    
+    public int addCourse(String courseId, String cName, String description, int points) throws SQLException {
+        return cb.addCourse("add",courseId, cName, description, points);
+    }
+    public int changeCourse(String courseId, String cName, String description, int points) throws SQLException {
+    	return cb.addCourse("change", courseId, cName, description, points);
+    }
+    
+    public int removeCourse(String courseId) throws SQLException {
+        return cb.removeCourse(courseId);
+    }
+    
+    public ResultSet getCourse(String courseId) throws SQLException {
+        return cb.getCourse(courseId);
+    }
+    
+    public ResultSet getCourses() throws SQLException {
+        return cb.getCourses();
+    }
+    
+    public ResultSet getCoursesForStudent(String pnr) throws SQLException{
+    	return cb.getCoursesForStudent(pnr);
+    }
+    
+    public ResultSet getFinishedCoursesForStudent(String pnr) throws SQLException{
+    	return cb.getFinishedCoursesForStudent(pnr);
+    }
+    
+    /**
+     * Kurshantering
+     * 
+     */
+    
+    public int startCourse(String pnr, String courseId) throws SQLException {
+        return cb.startCourse(pnr, courseId);
+
+    }
+    
+    public int endCourse(String pnr, String courseId, String grade) throws SQLException{
+        return cb.endCourse(pnr, courseId, grade);
+    }
+    
+    public int cancelCourse(String pnr, String courseId) throws SQLException{
+        return cb.cancelCourse(pnr, courseId);
+    }
+    
+    /**
+     * Statistik osv
+     * 
+     */
+    
+    public ResultSet studentResults(String pnr, String courseId) throws SQLException { 
+        return cb.studentResults(pnr, courseId);
+    }
+    
+    public ResultSet courseResults(String courseId) throws SQLException {
+        return cb.courseResults(courseId);
+    }
+    
+    public ResultSet studentsNotDone(String pnr) throws SQLException {
+        return cb.studentsNotDone(pnr);
+    }
+    
+    public float numberOfA(String courseId) throws SQLException {
+       return cb.numberOfA(courseId);
+    }
+    
+    public String highestFlow() throws SQLException {
+       return cb.highestFlow();
+    
+    /**
+     * Validerare
+     */
+    
+  //  public boolean validateNotNull(String input){
+    //	return v.validateNotNull(input);
+  //  }
+    
+  //  public boolean validateNumbers(String input){
+    //	return v.validateNumbers(input);
+    }
+    
+
+}
